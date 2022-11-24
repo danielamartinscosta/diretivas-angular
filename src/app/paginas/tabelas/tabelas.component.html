@@ -1,0 +1,26 @@
+<h1>Tabela paginas</h1>
+<div *ngIf="produtos.length == 0">Não existem produtos cadastrados</div> <!--Se o tamanho de produtos (se não estiver preenchido) for igual a 0, vai trazer a mensagem-->
+<table *ngIf="produtos.length > 0" class="table table-bordered dataTable" id="dataTable" role="grid" aria-describedby="dataTable_info"
+    style="width: 100%;" width="100%" cellspacing="0">
+    <thead>
+        <tr role="row">
+            <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                style="width: 160.717px;" aria-label="Name: activate to sort column descending" aria-sort="ascending">
+                ID</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 264.367px;"
+                aria-label="Position: activate to sort column ascending">Nome</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 114.117px;"
+                aria-label="Office: activate to sort column ascending">Descrição</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 50.2px;"
+                aria-label="Age: activate to sort column ascending">Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="odd" *ngFor="let produto of produtos"> <!--irá ler produto em produtos-->
+            <td class="sorting_1">{{produto.id}}</td>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.descricao}}</td>
+            <td>R$ {{produto.preco}}</td>
+        </tr>
+    </tbody>
+</table>
